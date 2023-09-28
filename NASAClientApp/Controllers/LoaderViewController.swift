@@ -17,6 +17,7 @@ class LoaderViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         makeAnimationLoader()
         setupUI()
         animationToScreen()

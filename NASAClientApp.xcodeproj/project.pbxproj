@@ -13,12 +13,15 @@
 		C8BB3AD62AC185A800CBB11D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BB3AD42AC185A800CBB11D /* Main.storyboard */; };
 		C8BB3AD82AC185AA00CBB11D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8BB3AD72AC185AA00CBB11D /* Assets.xcassets */; };
 		C8BB3ADB2AC185AA00CBB11D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BB3AD92AC185AA00CBB11D /* LaunchScreen.storyboard */; };
-		C8BB3AE62AC18B7200CBB11D /* NasaDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8BB3AE42AC18B7200CBB11D /* NasaDB.xcdatamodeld */; };
 		C8BB3AE92AC367DB00CBB11D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C8BB3AE82AC367DB00CBB11D /* Lottie */; };
 		C8BB3AEB2AC368AE00CBB11D /* loaderGif.json in Resources */ = {isa = PBXBuildFile; fileRef = C8BB3AEA2AC368AE00CBB11D /* loaderGif.json */; };
 		C8BB3AED2AC3690D00CBB11D /* animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = C8BB3AEC2AC3690C00CBB11D /* animation.gif */; };
 		C8BB3AF32AC3750D00CBB11D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C8BB3AF22AC3750D00CBB11D /* SnapKit */; };
 		C8BB3AF52AC37F2800CBB11D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB3AF42AC37F2800CBB11D /* HomeViewController.swift */; };
+		C8D7A0632AC5B3A2009A975F /* HomeNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D7A0622AC5B3A2009A975F /* HomeNavBar.swift */; };
+		C8D7A0652AC5C54B009A975F /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D7A0642AC5C54B009A975F /* FilterButton.swift */; };
+		C8D7A0672AC5C96B009A975F /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D7A0662AC5C96B009A975F /* UIView + Ext.swift */; };
+		C8D7A0692AC61783009A975F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D7A0682AC61783009A975F /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +33,13 @@
 		C8BB3AD72AC185AA00CBB11D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8BB3ADA2AC185AA00CBB11D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8BB3ADC2AC185AA00CBB11D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8BB3AE52AC18B7200CBB11D /* NasaDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NasaDB.xcdatamodel; sourceTree = "<group>"; };
 		C8BB3AEA2AC368AE00CBB11D /* loaderGif.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loaderGif.json; sourceTree = "<group>"; };
 		C8BB3AEC2AC3690C00CBB11D /* animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animation.gif; sourceTree = "<group>"; };
 		C8BB3AF42AC37F2800CBB11D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C8D7A0622AC5B3A2009A975F /* HomeNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavBar.swift; sourceTree = "<group>"; };
+		C8D7A0642AC5C54B009A975F /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		C8D7A0662AC5C96B009A975F /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
+		C8D7A0682AC61783009A975F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,6 @@
 		C8BB3AC22AC185A800CBB11D = {
 			isa = PBXGroup;
 			children = (
-				C8BB3AE42AC18B7200CBB11D /* NasaDB.xcdatamodeld */,
 				C8BB3ACD2AC185A800CBB11D /* NASAClientApp */,
 				C8BB3ACC2AC185A800CBB11D /* Products */,
 			);
@@ -70,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				C8BB3AE22AC1879C00CBB11D /* Application */,
-				C8BB3AE32AC1890900CBB11D /* View */,
+				C8BB3AE32AC1890900CBB11D /* Controllers */,
 				C8BB3AEE2AC373C300CBB11D /* Extentions */,
 				C8BB3ADC2AC185AA00CBB11D /* Info.plist */,
 			);
@@ -91,20 +96,32 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		C8BB3AE32AC1890900CBB11D /* View */ = {
+		C8BB3AE32AC1890900CBB11D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				C8BB3AD22AC185A800CBB11D /* LoaderViewController.swift */,
+				C8BB3AFD2AC59F8900CBB11D /* Views */,
 				C8BB3AF42AC37F2800CBB11D /* HomeViewController.swift */,
 			);
-			path = View;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C8BB3AEE2AC373C300CBB11D /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				C8D7A0662AC5C96B009A975F /* UIView + Ext.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		C8BB3AFD2AC59F8900CBB11D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C8D7A0622AC5B3A2009A975F /* HomeNavBar.swift */,
+				C8D7A0642AC5C54B009A975F /* FilterButton.swift */,
+				C8D7A0682AC61783009A975F /* HomeTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,9 +206,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8BB3AF52AC37F2800CBB11D /* HomeViewController.swift in Sources */,
-				C8BB3AE62AC18B7200CBB11D /* NasaDB.xcdatamodeld in Sources */,
+				C8D7A0672AC5C96B009A975F /* UIView + Ext.swift in Sources */,
+				C8D7A0652AC5C54B009A975F /* FilterButton.swift in Sources */,
 				C8BB3AD32AC185A800CBB11D /* LoaderViewController.swift in Sources */,
 				C8BB3ACF2AC185A800CBB11D /* AppDelegate.swift in Sources */,
+				C8D7A0632AC5B3A2009A975F /* HomeNavBar.swift in Sources */,
+				C8D7A0692AC61783009A975F /* HomeTableViewCell.swift in Sources */,
 				C8BB3AD12AC185A800CBB11D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,20 +472,6 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		C8BB3AE42AC18B7200CBB11D /* NasaDB.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C8BB3AE52AC18B7200CBB11D /* NasaDB.xcdatamodel */,
-			);
-			currentVersion = C8BB3AE52AC18B7200CBB11D /* NasaDB.xcdatamodel */;
-			name = NasaDB.xcdatamodeld;
-			path = NASAClientApp/View/NasaDB.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C8BB3AC32AC185A800CBB11D /* Project object */;
 }
