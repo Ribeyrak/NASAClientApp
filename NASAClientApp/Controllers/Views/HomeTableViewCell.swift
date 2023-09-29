@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 protocol ReusableViewCell: AnyObject {
     static var identifier: String { get }
@@ -68,7 +69,9 @@ class HomeTableViewCell: UITableViewCell {
     
     private lazy var image: UIImageView = {
         let v = UIImageView()
-        v.backgroundColor = .brown
+        v.backgroundColor = .gray
+        v.layer.masksToBounds = true
+        v.contentMode = .scaleAspectFill
         v.layer.cornerRadius = 20
         return v
     }()
@@ -139,8 +142,20 @@ class HomeTableViewCell: UITableViewCell {
     
     }
     
-    func setupCell() {
+    func setupCell(data: Photo) {
         layer.cornerRadius = 30
+        backgroundColor = .white
+        
+        let selected = UIView()
+        selected.backgroundColor = .white
+        selected.layer.cornerRadius = 30
+        selectedBackgroundView = selected
+        
+        roverNameLabel.text = data.rover?.name
+        cameraNameLabel.text = data.camera?.fullName
+        date.text = data.earthDate
+        let url = URL(string: data.imgSrc ?? "")
+        image.kf.setImage(with: url)
     }
 }
 
